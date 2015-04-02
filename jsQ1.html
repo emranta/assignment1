@@ -15,6 +15,85 @@
 
 </form>
 
-    <script src="js/jsQ1_JavaScript.js"></script>
+    <script>
+	/**
+ * Created by emran_pc on 23/03/2015.
+ */
+
+/*
+var field = document.querySelector("input");
+field.addEventListener('blur()' , blur_box())
+console.log('add_blur')
+field.addEventListener('onkeydown' , key())
+console.log('add_key')
+field.addEventListener('onclick' , click_on_box)
+console.log('add_click')
+*/
+function click_on_box()
+{
+//    alert('you can\'t use characters A U O C N')
+//    var say = prompt('what do you say?')
+//    alert(say)
+}
+
+function blur_box()
+{
+    console.log('on blur')
+    inp = document.getElementById('user2')
+    inp2 = inp.userInput
+    console.log(inp2)
+}
+function key(  )
+{
+    inp = document.getElementById('user2')
+    inp2 = inp.userInput
+    console.log('key')
+    console.log(inp2)
+ //   console.log(e)
+}
+
+
+function check_box()
+{
+    var box = document.getElementById('user')
+//    console.log(box)
+//    alert( user )
+
+
+
+}   // Your code here.
+
+
+function events( eve )
+{
+    n = document.my_form.user.value//.user.value
+//        n = x.user.value
+
+    console.log(n)
+    console.log(typeof n)
+
+    clear = 0
+    new_char = eve.keyCode
+    new_char2 = new_char + 32
+    console.log(new_char)
+    console.log(new_char2)
+    if(((new_char == 97) || (new_char == 117) || (new_char == 111) || (new_char == 99) || (new_char == 110)) || ((new_char2 == 97) || (new_char2 == 117) || (new_char2 == 111) || (new_char2 == 99) || (new_char2 == 110)))
+    {
+        clear = 1
+   //     alert("eAmin");
+    }
+}
+
+function key_up()
+{
+ //   console.log(n)
+    if( clear==1)
+    {
+        document.my_form.user.value = n
+        clear = 0
+    }//.user.value
+
+}
+	</script>
 </body>
 </html>
