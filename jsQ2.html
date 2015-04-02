@@ -10,6 +10,85 @@
         emran_talezade <br> 90102048 </div>
 
     </body>
-<script src="js/jsQ2_JavaScript.js"></script>
+<script>
+/**
+ * Created by emran_pc on 23/03/2015.
+ */
+
+
+
+var time_inter = 30     // 300 : 1s  // 100 : 3s
+function start2()
+{
+    var start = null;
+    var my_box = document.getElementById("box");
+
+    my_box.style.backgroundColor = "#00FFFF"
+    max_height = window.innerHeight - my_box.offsetHeight
+    max_width = window.innerWidth - my_box.offsetWidth
+
+    function step(timestamp)
+    {
+        if (!start)
+            start = timestamp;
+        var progress = timestamp - start;
+        my_box.style.top = Math.min(progress * max_height/5000 , max_height) + "px";   // time_inter / max_width
+        my_box.style.left= Math.min(progress * max_width /5000  , max_width) + "px";      // time_inter / max_height
+        //console.log( progress )
+        //console.log("top   :" + my_box.style.top)
+        //console.log("left  :" + my_box.style.left)
+        //console.log("top_w :" + max_height)
+        //console.log("left_w:" + max_width)
+        if ( progress < 5000 )
+        {
+            window.requestAnimationFrame(step);
+        }
+    }
+    window.requestAnimationFrame(step);
+}
+
+
+
+
+/*
+var x = 0
+var y = 0
+var x_add = window.innerWidth/300
+var y_add = window.innerHeight/300
+
+function start()
+{
+    setInterval(animation , 10 , 5)
+}
+function animation()
+{
+    win_h = window.innerHeight
+    win_w = window.innerWidth
+    console.log("w_h : " , win_h)
+    console.log("w_w : " , win_w)
+    my_box = document.getElementById("box")
+    if(x >= win_w - my_box.clientWidth )
+    {
+        x_add = 0
+        y_add = 0
+    }
+    x = x + x_add
+    console.log( x )
+    y = y + y_add
+    console.log( y )
+    my_box.style.left = x + "px"
+    my_box.style.top  = y + "px"
+    console.log("l : " , my_box.style.left)
+    console.log("t : " , my_box.style.top)
+    my_box.style.backgroundColor = "#775588"
+
+    //new_n = document.createElement("p")
+    //new_n_t = document.createTextNode('hellow world')
+    //new_n.appendChild(new_n_t);
+    //my_box.appendChild(new_n);
+}
+
+    */
+</script>
 
 </html>
