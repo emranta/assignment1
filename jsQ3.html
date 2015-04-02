@@ -28,7 +28,53 @@
     </tr>
 </table>
 
-    <script src="js/jsQ3_JavaScript.js"></script>
+    <script>
+	/**
+ * Created by emran_pc on 26/03/2015.
+ */
+
+
+function add_line()
+{
+
+    inp1 = document.getElementsByName('in1')[0].value
+    document.getElementsByName('in1')[0].value = ''
+    inp2 = document.getElementsByName('in2')[0].value
+    document.getElementsByName('in2')[0].value = ''
+    inp3 = document.getElementsByName('in3')[0].value
+    document.getElementsByName('in3')[0].value = ''
+    inp4 = document.getElementsByName('in4')[0].value
+    document.getElementsByName('in4')[0].value = ''
+
+    new_line1 = document.createElement("td")
+    new_line_cont1 = document.createTextNode(inp1)
+    new_line1.appendChild(new_line_cont1)
+    new_line2 = document.createElement("td")
+    new_line_cont2 = document.createTextNode(inp2)
+    new_line2.appendChild(new_line_cont2)
+    new_line3 = document.createElement("td")
+    new_line_cont3 = document.createTextNode(inp3)
+    new_line3.appendChild(new_line_cont3)
+    new_line4 = document.createElement("td")
+    new_line_cont4 = document.createTextNode(inp4)
+    new_line4.colSpan = 2
+    new_line4.appendChild(new_line_cont4)
+
+    new_line = document.createElement("tr")
+    new_line.appendChild(new_line1)
+    new_line.appendChild(new_line2)
+    new_line.appendChild(new_line3)
+    new_line.appendChild(new_line4)
+//  console.log(new_line)
+    input = nod = document.getElementById('table').lastElementChild.lastElementChild
+
+    nod = document.getElementById('table').lastElementChild.appendChild(new_line)
+    nod = document.getElementById('table').lastElementChild.appendChild(input)
+
+//  console.log(nod)
+
+}
+	</script>
 
 </body>
 </html>
